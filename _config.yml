@@ -1,8 +1,8 @@
 theme: jekyll-theme-minimal
-title: How To Use NASA APIs
-description: This guide contains:
+title: "How To Use NASA APIs"
+description: "This guide contains:
 -What the NASA API is
 -How to set it up
 -How to interact with it
 -Some sample code
--Where to find additional resources 
+-Where to find additional resources" 
