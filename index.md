@@ -21,10 +21,10 @@ NASA gathers a lot of data - over 15 Terabytes per day! And by a White House man
 
 Figuring out the best way to distribute, use and reuse NASA's data is a problem. NASA's APIs provide a solution by lowering the barrier of entry to people outside NASA to easily manipulate and access the public information. 
 ## How To Set It Up 
-Head on over to [api.NASA.gov](https://api.nasa.gov/index.html) and follow the **applying for an API key** link to get your personal API key. The process takes ~5 minutes and NASA will email your key to you.
+Head on over to [api.NASA.gov](https://api.nasa.gov/index.html) and follow the _applying for an API key_ link to get your personal API key. The process takes ~5 minutes and NASA will email your key to you.
 
 
-A documentation list of NASA APIs beginning with Astronomy Picture Of The Day (APOD) can be found [here](https://api.nasa.gov/api.html#apod)w. Here are some of the APIs available: 
+A documentation list of NASA APIs beginning with Astronomy Picture Of The Day (APOD) can be found [here](https://api.nasa.gov/api.html#apod). Here are some of the APIs available: 
 
 - **[Near Earth Object Web Service (NeoWs)](https://api.nasa.gov/api.html#NeoWS)** description
 - **[Earth Polychromatic Imaging Camera (EPIC)](https://api.nasa.gov/api.html#EPIC)** description
