@@ -1,4 +1,30 @@
+# This Guide Contains
+- What the NASA API is
+- How to set it up
+- How to interact with it
+- Some sample code
+- Where to find additional resources
+
+# What the NASA API is
+NASA's APIs allow developers to use NASA's data, such as imagery, eminently accesible for application development. 
+
+NASA has many APIs and this guide will focus on setting up and interacting with the following two:
+
+1. one
+2. two
+
+Head on over to [api.NASA.gov](https://api.nasa.gov/index.html) and follow the **applying for an API key** link to get your personal API key. The process takes ~5 minutes and NASA will email your key to you.
+
+# Picture Of The Day
+## How to set it up
+## How to interact with it
+
+# Earth Pictures
+## How to set it up
+## How to interact with it
 ## Welcome to GitHub Pages
+
+# Where to find additional resources 
 
 You can use the [editor on GitHub](https://github.com/wilsjame/how-to-nasa/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
