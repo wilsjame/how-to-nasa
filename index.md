@@ -3,28 +3,28 @@ This section contains an introduction to the NASA's Application Programming Inte
 ## Introduction
 API's provide an interface for machines to talk with each other. NASA's APIs allow developers to use NASA's data, such as imagery, for application development. 
 ## Background
-NASA gathers a lot of data - over 15 Terabytes per day! And by a White House mandate this is data is free to public - in a format useful to you. This is where the API comes into play. 
+NASA gathers a lot of data - over 15 Terabytes per day! And by a White House mandate this data is free to the public - in a format useful to you. This is where the API comes into play. 
 
-Figuring out the best way to distribute, use and reuse NASA's data is a problem. NASA's APIs provide a solution by lowering the barrier of entry to people outside NASA to easily manipulate and access the public information. 
+Figuring out the best way to distribute, use, and reuse NASA's data is a problem. NASA's APIs provide a solution by lowering the barrier of entry to people outside NASA to easily manipulate and access the public information. 
 
-A list of NASA APIs beginning with Astronomy Picture Of The Day (APOD) can be found [here](https://api.nasa.gov/api.html#apod). Here are some of the other APIs available: 
+A list of NASA APIs beginning with the Astronomy Picture Of The Day (APOD) can be found [here](https://api.nasa.gov/api.html#apod). Here are some of the other APIs available: 
 
-- **[Near Earth Object Web Service (NeoWs)](https://api.nasa.gov/api.html#NeoWS)** Access to near Earth asteroid information. 
-- **[Earth Polychromatic Imaging Camera (EPIC)](https://api.nasa.gov/api.html#EPIC)** Full disc imagery of the Earth. 
-- **[Earth Observatory Natural Event Tracker (EONET)](https://api.nasa.gov/api.html#EONET)** Prototype web service providing continously updated natural event metadata, such as storm imagery, gathered from the Earth's surface with the option to link to thematically-related web service-enabled image sources.  
-- **[NASA Image and Video Library](https://api.nasa.gov/api.html#Images)** Access to the NASA Image and Video Library site at [images.nasa.gov](https://images.nasa.gov/#/)
-- **[Sounds (beta)](https://api.nasa.gov/api.html#sounds)** Access to space sounds via SoundClound with some of the hassle abstracted away.
+- **[Near Earth Object Web Service (NeoWs)](https://api.nasa.gov/api.html#NeoWS):** Access to near Earth asteroid information. 
+- **[Earth Polychromatic Imaging Camera (EPIC)](https://api.nasa.gov/api.html#EPIC):** Full disc imagery of the Earth. 
+- **[Earth Observatory Natural Event Tracker (EONET)](https://api.nasa.gov/api.html#EONET):** Prototype web service providing continously updated natural event metadata, such as storm imagery, gathered from the Earth's surface with the option to link to thematically-related web service-enabled image sources.  
+- **[NASA Image and Video Library](https://api.nasa.gov/api.html#Images):** Access to the NASA Image and Video Library site at [images.nasa.gov](https://images.nasa.gov/#/)
+- **[Sounds (beta)](https://api.nasa.gov/api.html#sounds):** Access to space sounds via SoundClound with some of the hassle abstracted away.
 
 ## How To Set It Up 
 Head on over to [api.NASA.gov](https://api.nasa.gov/index.html) and follow the _applying for an API key_ link to get your personal API key. The process takes ~5 minutes and NASA will email your key to you.
 
-We will be working with the following three APIS:
+We will be working with these three APIs:
 
 1. [Astronomy Picture Of The Day](https://api.nasa.gov/api.html#apod)
 2. [Earth Observatory Natural Event Tracker (EONET)](https://api.nasa.gov/api.html#EONET)
 3. [Sounds (beta)](https://api.nasa.gov/api.html#sounds)
 
-For each of these APIs the following will be covered:
+For each API the following will be covered:
 
 - **Documenation of the API call**
   * What it does
