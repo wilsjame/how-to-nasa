@@ -1,17 +1,3 @@
-# This Guide (must) Contains
-- What the NASA API is
-- How to set it up
-- How to interact with it
-- Some sample code
-- Where to find additional resources
-
-- High-level overview of API (INTRO, BACKGROUND, SETUP, LINK TO OG API DOCS, etc..
-- Details of at least 2 API method/functionality
-  1. documentation of API call: what it does, what gets sent to the server, what get recieved
-  2. example of call: what *they* sent, and what was actually received
-  3. live or runnable code (js fiddle, code block)
-  
-
 # NASA API Overview
 This section contains an introduction to the NASA's Application Programming Interfaces (APIs), some background, and how to set it up with a link to the original API documentation.
 ## Introduction
@@ -26,11 +12,11 @@ Head on over to [api.NASA.gov](https://api.nasa.gov/index.html) and follow the _
 
 A documentation list of NASA APIs beginning with Astronomy Picture Of The Day (APOD) can be found [here](https://api.nasa.gov/api.html#apod). Here are some of the APIs available: 
 
-- **[Near Earth Object Web Service (NeoWs)](https://api.nasa.gov/api.html#NeoWS)** description
-- **[Earth Polychromatic Imaging Camera (EPIC)](https://api.nasa.gov/api.html#EPIC)** description
-- **[Earth Observatory Natural Event Tracker (EONET)](https://api.nasa.gov/api.html#EONET)** description
-- **[NASA Image and Video Library](https://api.nasa.gov/api.html#Images)** description
-- **[Sounds (beta)](https://api.nasa.gov/api.html#sounds)** description
+- **[Near Earth Object Web Service (NeoWs)](https://api.nasa.gov/api.html#NeoWS)** Access to near Earth asteroid information. 
+- **[Earth Polychromatic Imaging Camera (EPIC)](https://api.nasa.gov/api.html#EPIC)** Full disc imagery of the Earth. 
+- **[Earth Observatory Natural Event Tracker (EONET)](https://api.nasa.gov/api.html#EONET)** Prototype web service providing continously updated natural event metadata, such as storm imagery, gathered from the Earth's surface with the option to link to thematically-related web service-enabled image sources.  
+- **[NASA Image and Video Library](https://api.nasa.gov/api.html#Images)** Access to the NASA Image and Video Library site at [images.nasa.gov](https://images.nasa.gov/#/)
+- **[Sounds (beta)](https://api.nasa.gov/api.html#sounds)** Access to space sounds via SoundClound with some of the hassle abstracted away.
 
 
 
@@ -48,6 +34,21 @@ A documentation list of NASA APIs beginning with Astronomy Picture Of The Day (A
 ## Welcome to GitHub Pages
 
 # Where to find additional resources 
+
+
+# This Guide (must) Contains
+- What the NASA API is
+- How to set it up
+- How to interact with it
+- Some sample code
+- Where to find additional resources
+
+- High-level overview of API (INTRO, BACKGROUND, SETUP, LINK TO OG API DOCS, etc..
+- Details of at least 2 API method/functionality
+  1. documentation of API call: what it does, what gets sent to the server, what get recieved
+  2. example of call: what *they* sent, and what was actually received
+  3. live or runnable code (js fiddle, code block)
+  
 
 You can use the [editor on GitHub](https://github.com/wilsjame/how-to-nasa/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
