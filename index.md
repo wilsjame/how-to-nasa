@@ -1,19 +1,44 @@
-# This Guide Contains
+# This Guide (must) Contains
 - What the NASA API is
 - How to set it up
 - How to interact with it
 - Some sample code
 - Where to find additional resources
 
-# What the NASA API is
-NASA's APIs allow developers to use NASA's data, such as imagery, eminently accesible for application development. 
+- High-level overview of API (INTRO, BACKGROUND, SETUP, LINK TO OG API DOCS, etc..
+- Details of at least 2 API method/functionality
+  1. documentation of API call: what it does, what gets sent to the server, what get recieved
+  2. example of call: what *they* sent, and what was actually received
+  3. live or runnable code (js fiddle, code block)
+  
 
-NASA has many APIs and this guide will focus on setting up and interacting with the following two:
+# NASA API Overview
+This section contains an introduction to the NASA API, some background, and how to set it up with a link to the original API documentation.
+## Introduction
+API's provide an interface for machines to talk with each other. NASA's APIs allow developers to use NASA's data, such as imagery, for application development. 
+## Background
+NASA gathers a lot of data - over 15 Terabytes per day! And by a White House mandate this is data is free to public - in a format useful to you. This is where the API comes into play. 
 
-1. one
-2. two
-
+Figuring out the best way to distribute, use and reuse NASA's data is a problem. NASA's APIs provide a solution by lowering the barrier of entry to people outside NASA to easily manipulate and access the public information. 
+## How To Set It Up 
 Head on over to [api.NASA.gov](https://api.nasa.gov/index.html) and follow the **applying for an API key** link to get your personal API key. The process takes ~5 minutes and NASA will email your key to you.
+
+
+A documentation list of NASA APIs can be found [here](https://api.nasa.gov/api.html#apod) beginning with Astronomy Picture Of The Day (APOD). Here are some of the APIs available: 
+
+- **api link** description
+- **api link** description
+- **api link** description
+- **api link** description
+
+
+
+
+
+
+
+
+
 
 # Picture Of The Day
 ## How to set it up
