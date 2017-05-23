@@ -41,7 +41,7 @@ Lets get started!
 ## Documenation of the API call
 ### What it does
 ### What gets sent to the server
-### What get received
+### What gets received
 ## Example call 
 
 
