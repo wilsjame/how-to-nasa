@@ -105,6 +105,8 @@ Properties and their values are in quotes ` " " ` and are seperated with a colon
 
 ## Example call 
 
+We have covered how to make a call to the server and we see what get the server sends back to us. Now it time to access the object we recieve, parse it , use it in our application. We will be using JavaScript to work with the object and HTML to display our end product. The following is our code in action:
+
 http://jsfiddle.net/zalun/NmudS/embedded/js,result/
 
 [embedded fiddle example](https://api.nasa.gov/api.html#sounds)
