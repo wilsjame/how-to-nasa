@@ -38,8 +38,11 @@ For each API the following will be covered:
 Lets get started!
 
 # Astronomy Picture Of The Day
+The APOD is easy to work with and makes a good API to begin with. 
 ## Documenation of the API call
+Documentation can be found [here](https://api.nasa.gov/api.html#apod), it is brief but this understandable for such a simple call. 
 ### What it does
+
 ### What gets sent to the server
 ### What gets received
 ## Example call 
