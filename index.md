@@ -86,9 +86,30 @@ Here is an example request for the first APOD image:
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=1995-06-16
 ```
 
-
 ### What gets received
+The request returns information in JavaScript Object Notation (JSON). JSON is a syntax used for storing and exchanging data between a client (browser) and a server (NASA database). Here is the JSON object information returned from our last request:
+
+```markdown
+{
+  "date": "1995-06-16",
+  "explanation": "Today's Picture:    Explanation:  If the Earth could somehow be transformed to the ultra-high density of a neutron star , it might appear as it does in the above computer generated figure. Due to the very strong gravitational field, the neutron star distorts light from the background sky greatly. If you look closely, two images of the constellation Orion are visible. The gravity of this particular neutron star is so great that no part of the neutron star is blocked from view - light is pulled around by gravity even from the back of the neutron star.   We keep an  archive file.  Astronomy Picture of the Day is brought to you by  Robert Nemiroff and  Jerry Bonnell . Original material on this page is copyrighted to Robert Nemiroff and Jerry Bonnell.",
+  "hdurl": "https://apod.nasa.gov/apod/image/e_lens.gif",
+  "media_type": "image",
+  "service_version": "v1",
+  "title": "Neutron Star Earth",
+  "url": "https://apod.nasa.gov/apod/image/e_lens.gif"
+}
+```
+
+Properties and their values are in quotes ` " " ` and are seperated with a colon ` : `. This standard notation makes accessing and manipulating the data easy to do with JavaScript.
+
 ## Example call 
+
+http://jsfiddle.net/zalun/NmudS/embedded/js,result/
+
+[embedded fiddle example](https://api.nasa.gov/api.html#sounds)
+
+
 
 
 
