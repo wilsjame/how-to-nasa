@@ -72,15 +72,15 @@ We can append parameters to the url to create a query string (name/value pairs) 
 | hd | bool | False | Retrieve the URL for the high resolution image |
 | api_key | string | DEMO_KEY | api.nasa.gov key for expanded usage |
 
-Here is an example query. It begins with the GET request url from above followed a ``` ? ``` signifying the beginning of the query string. Follow the link to make the request!
+Here is an example query. It begins with the GET request url from above followed a  `?` signifying the beginning of the query string. Follow the link to make the request!
 
 ```markdown
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
 ```
 
-In your own application, use your personal API key instead of the DEMO_KEY. Append additional parameters to the querystring with with --- and use the --- symbol to create name/value pairs like before.
+In your own application, use your personal API key instead of the DEMO_KEY. Append additional parameters to the querystring with with `&` and use `=` to create name/value pairs like before.
 
-Here is an example requesting a the first APOD image:
+Here is an example requesting the first APOD image:
 
 ```markdown
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=1995-06-16
