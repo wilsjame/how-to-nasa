@@ -1,8 +1,13 @@
 # NASA API Overview
+
 This section contains an introduction to the NASA's Application Programming Interfaces (APIs), some background, and how to set it up with a link to the original API documentation.
+
 ## Introduction
+
 API's provide an interface for machines to talk with each other. NASA's APIs allow developers to use NASA's data, such as imagery, for application development. 
+
 ## Background
+
 NASA gathers a lot of data - over 15 Terabytes per day! And by a White House mandate this data is free to the public - in a format useful to you. This is where the API comes into play. 
 
 Figuring out the best way to distribute, use, and reuse NASA's data is a problem. NASA's APIs provide a solution by lowering the barrier of entry to people outside NASA to easily manipulate and access the public information. 
@@ -16,6 +21,7 @@ A list of NASA APIs beginning with the Astronomy Picture Of The Day (APOD) can b
 - **[Sounds (beta)](https://api.nasa.gov/api.html#sounds):** Access to space sounds via SoundClound with some of the hassle abstracted away.
 
 ## How To Set It Up 
+
 Head on over to [api.NASA.gov](https://api.nasa.gov/index.html) and follow the _applying for an API key_ link to get your personal API key. The process takes ~5 minutes and NASA will email your key to you.
 
 We will be working with these three APIs:
@@ -38,12 +44,27 @@ For each API the following will be covered:
 Lets get started!
 
 # Astronomy Picture Of The Day
-The APOD is easy to work with and makes a good API to begin with. 
+
+The APOD is easy to work with making it a good API to start with. 
+
 ## Documenation of the API call
-Documentation can be found [here](https://api.nasa.gov/api.html#apod), it is brief but this understandable for such a simple call. 
+
+Documentation can be found [here](https://api.nasa.gov/api.html#apod), it is brief but this is understandable for such a simple call. 
+
 ### What it does
 
+The APOD call returns a JSON object containing an image or video, date, explanation, and additional metadata. It's our job to make the call and manipulate the received data however we want. 
+
 ### What gets sent to the server
+
+APOD uses a GET HTTP request method to request data from the NASA server. GET methods request data from a specified source url. The following shows the HTTP method and the request url.
+
+```markdown
+GET https://api.nasa.gov/planetary/apod
+```
+We can append parameters to the url to create a query string (name/value pairs) to tell the NASA server who's making the call and if we want something in return besides the defaults. 
+
+
 ### What gets received
 ## Example call 
 
