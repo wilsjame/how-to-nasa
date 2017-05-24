@@ -66,17 +66,23 @@ We can append parameters to the url to create a query string (name/value pairs) 
 
 **Query Parameters**
 
-| **Parameter** | **Type** | **Default** | **Description** |
+| **Parameter** | **Type** | **Default Value** | **Description** |
 | ------------- | -------- | ----------- | --------------- |
 | date | YYYY-MM-DD | _today_ | The date of the APOD image to retrieve |
 | hd | bool | False | Retrieve the URL for the high resolution image |
 | api_key | string | DEMO_KEY | api.nasa.gov key for expanded usage |
 
+Here is an example query. Follow the link to make the request:
 
+```markdown
+```
 
+In your own application, use your personal API key instead of the DEMO_KEY. To append additional parameters seperate them with the --- symbol and use the --- symbol to create name/value pairs.
 
+Here is an example requesting a high def image on the first APOD image:
 
-
+```markdown
+```
 
 ### What gets received
 ## Example call 
