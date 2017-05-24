@@ -107,7 +107,7 @@ Properties and their values are in quotes ` " " ` and are seperated with a colon
 
 We have covered how to make a call to the server and we see what get the server sends back to us. Now it time to access the object we recieve, parse it , use it in our application. We will be using JavaScript to work with the object and HTML to display our end product. The following is our code in action:
 
-<iframe width="100%" height="300" src="//jsfiddle.net/wilsjame/vc2xwasa/13/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="700" src="//jsfiddle.net/wilsjame/vc2xwasa/13/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 
