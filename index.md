@@ -45,7 +45,7 @@ Lets get started!
 
 # Astronomy Picture Of The Day
 
-The APOD is easy to work with making it a good API to start with. 
+The APOD is a good API to start with because it's easy to work with. 
 
 ## Documenation of the API call
 
@@ -62,7 +62,20 @@ APOD uses a GET HTTP request method to request data from the NASA server. GET me
 ```markdown
 GET https://api.nasa.gov/planetary/apod
 ```
-We can append parameters to the url to create a query string (name/value pairs) to tell the NASA server who's making the call and if we want something in return besides the defaults. 
+We can append parameters to the url to create a query string (name/value pairs) to tell the NASA server who's making the call and if we want something in return besides the defaults. The table below shows the query parameters. 
+
+**Query Parameters**
+
+| **Parameter** | **Type** | **Default** | **Description** |
+| ------------- | -------- | ----------- | --------------- |
+| date | YYYY-MM-DD | _today_ | The date of the APOD image to retrieve |
+| hd | bool | False | Retrieve the URL for the high resolution image |
+| api_key | string | DEMO_KEY | api.nasa.gov key for expanded usage |
+
+
+
+
+
 
 
 ### What gets received
