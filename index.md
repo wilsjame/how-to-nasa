@@ -78,13 +78,14 @@ Here is an example query. It begins with the GET request url from above followed
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
 ```
 
-In your own application, use your personal API key instead of the DEMO_KEY. Append additional parameters to the querystring with with `&` and use `=` to create name/value pairs like before.
+Append additional parameters to the querystring with with `&` and use `=` to create name/value pairs like before.  
 
-Here is an example requesting the first APOD image:
+Here is an example request for the first APOD image:
 
 ```markdown
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=1995-06-16
 ```
+
 
 ### What gets received
 ## Example call 
