@@ -78,7 +78,7 @@ Here is an example query. It begins with the GET request url from above followed
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
 ```
 
-Append additional parameters to the querystring with with `&` and use `=` to create name/value pairs like before.  
+Append additional parameters to the querystring with with ` & ` and use ` = ` to create name/value pairs like before.  
 
 Here is an example request for the first APOD image:
 
