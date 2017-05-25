@@ -136,6 +136,8 @@ We are using a **GET** method and have combined the **url** and **api_key** vari
 req.send();
 ```
 
+the XMLHttpRequest **addEventListener** method 
+
 
 
 
