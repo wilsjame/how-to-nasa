@@ -105,9 +105,19 @@ Properties and their values are in quotes ` " " ` and are seperated with a colon
 
 ## Example call 
 
-We have covered how to make a call to the server and we see what get the server sends back to us. Now it time to access the object we recieve, parse it , use it in our application. We will be using JavaScript to work with the object and HTML to display our end product. The following is our code in action:
+We have covered how to make a call to the server and what the server sends back to us. Now it time to access the object we recieve, parse it, and use it in our application. We will be using JavaScript and HTML to display our end product. The following is our code in action:
 
 <iframe width="100%" height="700" src="//jsfiddle.net/wilsjame/vc2xwasa/14/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+Lets cover what's going on here. We begin with the variable list:
+
+```markdown
+var req = new XMLHttpRequest();
+var url = "https://api.nasa.gov/planetary/apod?api_key=";
+var api_key = "DEMO_KEY";
+```
+
+
 
 
 
