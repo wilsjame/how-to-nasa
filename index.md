@@ -107,7 +107,7 @@ Properties and their values are in quotes ` " " ` and are seperated with a colon
 
 We have covered how to make a call to the server and what the server sends back to us. Now it time to access the object we recieve, parse it, and use it in our application. We will be using JavaScript and HTML to display our end product. The following is our code in action:
 
-<iframe width="100%" height="700" src="//jsfiddle.net/wilsjame/vc2xwasa/16/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="700" src="//jsfiddle.net/wilsjame/vc2xwasa/16/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 Lets cover what's going on here. We begin with the variable list:
 
@@ -192,6 +192,15 @@ document.getElementById("title").textContent = response.title;
 
 
 
+
+
+
+
+
+
+
+
+<--!
 # This Guide (must) Contains
 - What the NASA API is
 - How to set it up
@@ -205,25 +214,6 @@ document.getElementById("title").textContent = response.title;
   2. example of call: what *they* sent, and what was actually received
   3. live or runnable code (js fiddle, code block)
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 You can use the [editor on GitHub](https://github.com/wilsjame/how-to-nasa/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
@@ -259,3 +249,5 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+-->
