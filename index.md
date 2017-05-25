@@ -178,6 +178,19 @@ document.getElementById("title").textContent = response.title;
     document.getElementById("explanation").textContent = response.explanation;
 ```
 
+# API #2
+
+## Documentation of the API call
+
+### What it does
+
+### What get sent to the server
+
+### What gets received
+
+## Example call
+
+
 
 
 
