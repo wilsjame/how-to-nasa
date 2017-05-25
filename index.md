@@ -163,7 +163,23 @@ req.readyState == 4
 ```
 The **readyState** method returns the state an XMLHttpRequest client is in. 4 denotes the operation is complete. 
 
-When both these properties are met it means the request was a sucess and we succesfully recieved the data from the server. 
+When both these properties are met it means the request was a sucess and we succesfully received the data from the server. The data recieved from the server is raw text in JSON format. We parse this with following code
+
+```markdown
+var response = JSON.parse(req.responseText);
+```
+
+Now we have neat variable **response** that holds all the data received in a neat JSON object. We access the **Document Object Model (DOM)** and change html elements with final lines of code:
+
+```markdown
+document.getElementById("title").textContent = response.title;
+    document.getElementById("date").textContent = response.date;
+    document.getElementById("pic").src = response.hdurl;
+    document.getElementById("explanation").textContent = response.explanation;
+```
+
+
+
 
 
 
