@@ -107,7 +107,7 @@ Properties and their values are in quotes ` " " ` and are seperated with a colon
 
 We have covered how to make a call to the server and what the server sends back to us. Now it time to access the object we recieve, parse it, and use it in our application. We will be using JavaScript and HTML to display our end product. The following is our code in action:
 
-<iframe width="100%" height="700" src="//jsfiddle.net/wilsjame/vc2xwasa/14/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="700" src="//jsfiddle.net/wilsjame/vc2xwasa/16/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 Lets cover what's going on here. We begin with the variable list:
 
@@ -116,6 +116,26 @@ var req = new XMLHttpRequest();
 var url = "https://api.nasa.gov/planetary/apod?api_key=";
 var api_key = "DEMO_KEY";
 ```
+We create a new **XMLHttpRequest** and assign in to req. An XMLHttpRequest provides client functionality for transferring data between a client and server. Think of it as a stream that connects or browser (client) the NASA databases (server). 
+
+Then we create variables to hold the GET request url and API Key. Use your own API KEY by simply changing the **api_key** value. 
+
+```markdown
+req.open("GET", url + api_key, true);
+```
+
+The XMLHttpRequest **open** method initializes a request. Here are its parameters:
+
+```markdown
+req.open(method, url)
+```
+
+We are using a **GET** method and have combined the **url** and **api_key** variables to create a valid url. AFter the request is initialized (opened) we send it to the server.
+
+```markdown
+req.send();
+```
+
 
 
 
