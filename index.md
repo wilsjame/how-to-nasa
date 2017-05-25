@@ -130,13 +130,44 @@ The XMLHttpRequest **open** method initializes a request. Here are its parameter
 req.open(method, url)
 ```
 
-We are using a **GET** method and have combined the **url** and **api_key** variables to create a valid url. AFter the request is initialized (opened) we send it to the server.
+We are using a **GET** method and have combined the **url** and **api_key** variables to create a valid url. AFter the request is initialized (opened) we send it to the server with,
 
 ```markdown
 req.send();
 ```
 
-the XMLHttpRequest **addEventListener** method 
+the XMLHttpRequest **addEventListener** listens for an event type  and executes a function when the event fires (is fulfilled). 
+
+```markdown
+req.addEventListener("load", function(){
+	if(req.status == 200 && req.readyState == 4){
+  	var response = JSON.parse(req.responseText);
+    document.getElementById("title").textContent = response.title;
+    document.getElementById("date").textContent = response.date;
+    document.getElementById("pic").src = response.hdurl;
+    document.getElementById("explanation").textContent = response.explanation;
+  }
+})
+```
+
+The event type is **load** so when req (our XMLHttpRequest) is finished loading the function exececutes. Inside the function we check two things before we manipulate the data.
+
+```markdown
+req.status == 200
+```
+
+The **status** method returns a numerical status code of the response of the XMLHttpRequest. 200 denotes a succesful request.
+
+```markdown
+req.readyState == 4
+```
+The **readyState** method returns the state an XMLHttpRequest client is in. 4 denotes the operation is complete. 
+
+When both these properties are met it means the request was a sucess and we succesfully recieved the data from the server. 
+
+
+
+
 
 
 
