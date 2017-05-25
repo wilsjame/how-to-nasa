@@ -178,11 +178,14 @@ document.getElementById("title").textContent = response.title;
     document.getElementById("explanation").textContent = response.explanation;
 ```
 
-# API #2
+# Earth Polychromatic Imaging Camera (EPIC)
 
 ## Documentation of the API call
 
+Official documentation can be found on the [EPIC API Documentation Page](https://epic.gsfc.nasa.gov/about/api), it is more in depth than the APOD documentation. 
+
 ### What it does
+The EPIC API gives access to the pictures taken by EPIC (Earth Polychromatic Imaging Camera) onboard NOAA's DSCOVR (Deep Space Climate Observatory) spacecraft. To read more about epi
 
 ### What gets sent to the server
 
