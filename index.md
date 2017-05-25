@@ -184,7 +184,7 @@ document.getElementById("title").textContent = response.title;
 
 ### What it does
 
-### What get sent to the server
+### What gets sent to the server
 
 ### What gets received
 
