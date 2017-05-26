@@ -255,12 +255,14 @@ Here's the complete URL for a full-sze original PNG image from our last request.
 https://epic.gsfc.nasa.gov/archive/enhanced/2015/10/31/png/epic_RGB_20151031003633_01.png
 ```
 
-
-
-
-
-
 ## Example call
+
+<iframe width="100%" height="700" src="//jsfiddle.net/wilsjame/pwanobnz/17/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+```markdown
+https://api.nasa.gov/EPIC/api/natural/date/2016-07-05?api_key=5B6oJsSCQyekXZvNOKpsUhRPl1e7FHqjIAyHpybk
+```
+
 
 
 
