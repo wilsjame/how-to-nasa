@@ -228,7 +228,13 @@ https://api.nasa.gov/EPIC/api/enhanced/date/2015-10-31?api_key=DEMO_KEY
 The request returns information in JSON. The retrievable metadata includes the image name, date, caption, and positional data. Here is an exceprt of the beginning of the JSON object information returned from our last request:
 
 ```markdown
-[{"image":"epic_RGB_20151031003633_01","caption":"This image was taken by the NASA EPIC camera onboard the NOAA DSCOVR spacecraft","centroid_coordinates":{"lat":-5.07641,"lon":159.547159},"dscovr_j2000_position":{"x":-1283061.5,"y":-669893.4375,"z":-130240.867188},"lunar_j2000_position":...}]
+[{
+	"image":"epic_RGB_20151031003633_01",
+	"caption":"This image was taken by the NASA EPIC camera onboard the NOAA DSCOVR spacecraft",
+	"centroid_coordinates":{"lat":-5.07641,"lon":159.547159},
+	"dscovr_j2000_position":{"x":-1283061.5,"y":-669893.4375,"z":-130240.867188},
+	"lunar_j2000_position":...
+}]
 ```
 
 The actual response is much longer and includes numerous positional data sets such as lunar and sun positions in space. For our application we only need to access to the actual image file which is **not** returned. We need to use the image name returned to access the actual image source. Here is the syntax for creating the image source URL. Variables are denoted with a ` $ ` and are in all caps.
