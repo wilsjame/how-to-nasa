@@ -80,7 +80,7 @@ https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
 
 Append additional parameters to the querystring with with ` & ` and use ` = ` to create name/value pairs like before.  
 
-Here is an example request for the first APOD image:
+Here is an example request for the first ever APOD image:
 
 ```markdown
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=1995-06-16
@@ -185,9 +185,44 @@ document.getElementById("title").textContent = response.title;
 Official documentation can be found on the [EPIC API Documentation Page](https://epic.gsfc.nasa.gov/about/api), it is more in depth than the APOD documentation. 
 
 ### What it does
-The EPIC API gives access to the pictures taken by EPIC (Earth Polychromatic Imaging Camera) onboard NOAA's DSCOVR (Deep Space Climate Observatory) spacecraft. To read more about epi
+The EPIC API gives access to the pictures taken by [EPIC (Earth Polychromatic Imaging Camera)](https://epic.gsfc.nasa.gov/epic) onboard NOAA's (National Oceanic and Atmospheric Administration) DSCOVR (Deep Space Climate Observatory). Along with imagery, the API provides image metadata in JSON format. 
 
 ### What gets sent to the server
+
+EPIC uses a GET HTTP request method to request data from the NASA server. GET methods request data from a specified source url. The following shows the HTTP method and the request url.
+
+```markdown
+GET https://epic.gsfc.nasa.gov/EPIC/api
+```
+We use a path with slashes to append parameters to the URL. This is different from the APOD which uses query-string variables.
+
+**Query Parameters**
+
+| **Parameter** | **Type** | **Default Value** | **Description** |
+| ------------- | -------- | ----------- | --------------- |
+| natural | string | Most Recent Natural Color  | Metadata on the most recent date of natural color imagery. |
+| natural/date | YYYY-MM-DD | Most Recent Available | Metadata for natural color imagery available for a given date. |
+| natural/all | string | Dates for Natural Color | A listing of all dates with available natural color imagery. |
+| natural/available | string | Dates for Natural Color | Alternate listing of all dates with available natural color imagery. |
+| enhanced |string | Most Recent Enhanced Color | Metadata on the most recent date of enhanced color imagery. |
+| enhanced/date | YYYY-MM-DD | Most Recent Available | Metadata for enhanced color imagery for a given date. |
+| enhanced/all | string	Dates for Enhanced Imagery | A listing of all dates with available enhanced color imagery. |
+| enhanced/available | string | Dates for Enhanced Imagery | Alternate listing of all dates with available enhanced color imagery. |
+| api_key | string | DEMO_KEY | api.nasa.gov key for expanded usage |
+
+Here is an example URL query. It begins with the GET request url from above followed a  `/` signifying the beginning of the path. When the path ends we append our personal api_key like before. Follow the link to make the request!
+
+```markdown
+https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+```
+
+Append additional parameters to the URL with ` / ` and remember to end the URL with your API key
+
+Here is an example request for the first ever APOD image:
+
+```markdown
+https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=1995-06-16
+```
 
 ### What gets received
 
