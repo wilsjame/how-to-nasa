@@ -210,18 +210,18 @@ We use a path with slashes to append parameters to the URL. This is different fr
 | enhanced/available | string | Dates for Enhanced Imagery | Alternate listing of all dates with available enhanced color imagery. |
 | api_key | string | DEMO_KEY | api.nasa.gov key for expanded usage |
 
-Here is an example URL query. It begins with the GET request url from above followed a  `/` signifying the beginning of the path. When the path ends we append our personal api_key like before. Follow the link to make the request!
+Here is an example URL requesting the most recent natural color image. It begins with the GET request url from above followed by a  `/` signifying the beginning of the path. When the path ends we append our personal api_key. Follow the link to make the request!
 
 ```markdown
-https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+https://api.nasa.gov/EPIC/api/natural?api_key=DEMO_KEY
 ```
 
-Append additional parameters to the URL with ` / ` and remember to end the URL with your API key
+Append additional parameters to the URL path with ` / ` and remember to end the URL with your API key
 
-Here is an example request for the first ever APOD image:
+Here is an example request for the enhanced image taken on October 31st, 2015:
 
 ```markdown
-https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=1995-06-16
+https://api.nasa.gov/EPIC/api/enhanced/date/2015-10-31?api_key=DEMO_KEY 
 ```
 
 ### What gets received
