@@ -259,7 +259,7 @@ https://epic.gsfc.nasa.gov/archive/enhanced/2015/10/31/png/epic_RGB_201510310036
 
 On July 5th, 2016 the moon passed between DSCOVR and the Earth. EPIC snapped images over a period of about 4 hours. The entire set consists of 15 pictures where one can see the far side of the moon, which is never seen from Earth. The following example uses the EPIC API to access 3 of these pictures to create an automatic slideshow showing the lunar Transit!
 
-<iframe width="100%" height="700" src="//jsfiddle.net/wilsjame/pwanobnz/17/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="600" src="//jsfiddle.net/wilsjame/pwanobnz/17/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 Let's cover what's going on here. We begin by getting the pictures from the NASA base using the EPIC API. The process is similar to the APOD example above except this time we define two new variables **img_url** and **img_type**. These will be used to complete the image source url.
 
