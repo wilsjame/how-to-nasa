@@ -55,14 +55,14 @@ The APOD call returns a JSON object containing an image or video, date, explanat
 
 ### What gets sent to the server
 
-APOD uses a GET HTTP request method to request data from the NASA server. GET methods request data from a specified source url. The following shows the HTTP method and the request url.
+APOD uses a **GET HTTP request method** to request data from the NASA server. GET methods request data from a specified **request url**. The following shows the HTTP method and the request url.
 
 ```markdown
 GET https://api.nasa.gov/planetary/apod
 ```
-We can append parameters to the url to create a query string (name/value pairs) to tell the NASA server who's making the call and if we want something in return besides the defaults. The table below shows the query parameters. 
+We append parameters to the url to create a **query string** (parameter/value pairs) to tell the NASA server who's making the call (api_key parameter) and if we want something in return besides the defaults. The table below shows the query parameters. 
 
-**Query Parameters**
+<p align="center"><b>Query Parameters</b></p>
 
 | **Parameter** | **Type** | **Default Value** | **Description** |
 | ------------- | -------- | ----------- | --------------- |
@@ -76,16 +76,14 @@ Here is an example query. It begins with the GET request url from above followed
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
 ```
 
-Append additional parameters to the querystring with with ` & ` and use ` = ` to create name/value pairs like before.  
-
-Here is an example request for the first ever APOD image:
+Here is an example request for the first ever APOD image. Append additional parameters to the querystring with with `&` and use `=` to create parameter/value pairs like before.  
 
 ```markdown
 https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=1995-06-16
 ```
 
 ### What gets received
-The request returns information in JavaScript Object Notation (JSON). JSON is a syntax used for storing and exchanging data between a client (browser) and a server (NASA database). Here is the JSON object information returned from our last request:
+The request returns information in JavaScript Object Notation (JSON). JSON is a syntax used for storing and exchanging data between a client (browser) and a server (NASA database). Here is the JSON returned from our last request:
 
 ```markdown
 {
@@ -99,15 +97,19 @@ The request returns information in JavaScript Object Notation (JSON). JSON is a 
 }
 ```
 
-Properties and their values are in quotes ` " " ` and are seperated with a colon ` : `. This standard notation makes accessing and manipulating the data easy to do with JavaScript.
+Properties and values are in quotes `" "` and are seperated with a colon `:`. This standard notation makes accessing and manipulating received data easy to work with using JavaScript.
 
 ## Example call 
 
-We have covered how to make a call to the server and what the server sends back to us. Now it time to access the object we recieve, parse it, and use it in our application. We will be using JavaScript and HTML to display our end product. The following is our code in action:
+We have covered how to make a call to the server and what the server sends back to us. Now it time to access the object we recieve, parse it, and use it in our application. We will be using JavaScript and HTML to display our end product. The following is our code in action.
+
+### JSFiddle
 
 <iframe width="100%" height="800" src="//jsfiddle.net/wilsjame/vc2xwasa/19/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-Lets cover what's going on here. We begin with the variable list:
+### How it works
+
+We begin with the variable list:
 
 ```markdown
 var req = new XMLHttpRequest();
