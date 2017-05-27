@@ -338,87 +338,12 @@ The current image is rendered as a block element with the ` style.display ` prop
   slides[slideIndex-1].style.display = "block"; 
 ```
 
-Finally, we call the ` showSLides() ` function recursively using the ` setTimeout() ` function which takes a timing parameter set to 2 seconds for each image in this case. There is no base case to the slideshow will never stop. 
+Finally, we call the ` showSlides() ` function recursively using the ` setTimeout() ` function which takes a timing parameter set to 2 seconds for each image in this case. The slideshow wil continueu indefinitely because there is no base case to halt the recursive call. 
 
+# Where To Find Additional Resources
 
+Here is list of addtional links that were used in the making of this guide. They include additional information on the various topics covered.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<---!
-# This Guide (must) Contains
-- What the NASA API is
-- How to set it up
-- How to interact with it
-- Some sample code
-- Where to find additional resources
-
-- High-level overview of API (INTRO, BACKGROUND, SETUP, LINK TO OG API DOCS, etc..
-- Details of at least 2 API method/functionality
-  1. documentation of API call: what it does, what gets sent to the server, what get recieved
-  2. example of call: what *they* sent, and what was actually received
-  3. live or runnable code (js fiddle, code block)
-  
-You can use the [editor on GitHub](https://github.com/wilsjame/how-to-nasa/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wilsjame/how-to-nasa/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
-
--->
+- **[NASA API Portal](https://api.nasa.gov/)** Main page for the NASA API
+- **[EPIC Website](https://epic.gsfc.nasa.gov/)** Official DSCOVR: EPIC website 
+- **[w3schools How To - Slideshow](https://www.w3schools.com/howto/howto_js_slideshow.asp)** w3chools guide on how to create slideshow with CSS and JavaScript.  
