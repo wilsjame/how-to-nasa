@@ -105,7 +105,7 @@ We have covered how to make a call to the server and what the server sends back 
 
 ### JSFiddle
 
-<iframe width="100%" height="800" src="//jsfiddle.net/wilsjame/vc2xwasa/19/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="800" src="//jsfiddle.net/wilsjame/vc2xwasa/19/embedded/result,js,html" allowfullscreen="allowfullscreen" frameborder="0"></iframe><br>
 
 ### How it works
 
@@ -116,7 +116,7 @@ var req = new XMLHttpRequest();
 var url = "https://api.nasa.gov/planetary/apod?api_key=";
 var api_key = "DEMO_KEY";
 ```
-We create a new **XMLHttpRequest** and assign in to req. An XMLHttpRequest provides client functionality for transferring data between a client and server. Think of it as a stream that connects or browser (client) the NASA databases (server). 
+We create a new **XMLHttpRequest** and assign in to the variable **req**. An XMLHttpRequest provides client functionality for transferring data between a client and server. Think of it as a stream that connects or browser (client) the NASA databases (server). 
 
 Then we create variables to hold the GET request url and API Key. Use your own API KEY by simply changing the **api_key** value. 
 
