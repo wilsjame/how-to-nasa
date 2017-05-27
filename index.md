@@ -41,8 +41,6 @@ The following will be covered for each API:
 
 Lets get started!
 
-<br>
-
 # Astronomy Picture Of The Day
 
 The APOD is a good API to start with because it's easy to work with. 
@@ -64,7 +62,7 @@ GET https://api.nasa.gov/planetary/apod
 ```
 We append parameters to the url to create a **query string** (parameter/value pairs) to tell the NASA server who's making the call (api_key parameter) and if we want something in return besides the defaults. The table below shows the query parameters. 
 
-<p align="center"><b>Query Parameters</b></p>
+<p align="center"><b>APOD Query Parameters</b></p>
 
 | **Parameter** | **Type** | **Default Value** | **Description** |
 | ------------- | -------- | ----------- | --------------- |
@@ -197,7 +195,7 @@ GET https://epic.gsfc.nasa.gov/EPIC/api
 ```
 Create a path with slashes `/` to append parameters to the URL. This is different from the APOD which uses the `paramter=value` query-string format.
 
-**Query Parameters**
+<p align="center"><b>EPIC Query Parameters</b></p>
 
 | **Parameter** | **Type** | **Default Value** | **Description** |
 | ------------- | -------- | ----------- | --------------- |
