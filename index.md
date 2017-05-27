@@ -224,7 +224,7 @@ https://api.nasa.gov/EPIC/api/enhanced/date/2015-10-31?api_key=DEMO_KEY
 
 ### What gets received
 
-The request returns an **array** of JSON objects enclosed in the outermost most brackets`[ ]`. Each JSON ojbect contains information for a single image. The retrievable metadata includes the image name, date, caption, and positional data. Here is an exceprt of the beginning of the JSON object information returned from our last request:
+The request returns an **array of JSON objects** enclosed in the outermost most brackets`[ ]`. Each JSON ojbect contains information for a single image. The retrievable metadata includes the image name, date, caption, and positional data. Here is an exceprt of the beginning of the JSON object information returned from our last request:
 
 ```markdown
 [{
@@ -236,7 +236,7 @@ The request returns an **array** of JSON objects enclosed in the outermost most 
 }]
 ```
 
-The actual response is much longer and includes numerous positional data sets such as lunar and sun positions in space. For our application we want access to the image file which is **not** returned. Use the **image name** returned to access the actual image source. Here is the syntax for creating the image source URL. Variables are denoted with a `$` and are in all caps.
+The actual response is much longer and includes numerous positional data sets such as lunar and sun positions in space. For our application we want access to the image file which is **not** returned. Use the **image name** returned to access the actual image source. Here is the syntax for creating the **image source URL**. Variables are denoted with a `$` and are in all caps.
 
 ```markdown
 https://epic.gsfc.nasa.gov/archive/$COLLECTION/$YEAR/$MONTH/$DAY/$IMAGE_TYPE/$IMAGE_NAME.$IMAGE_TYPE
@@ -267,7 +267,7 @@ On July 5th, 2016 the moon passed between DSCOVR and the Earth. EPIC snapped ima
 
 ### How it works
 
-Let's cover what's going on here. We begin by getting the pictures from the NASA base using the EPIC API. The process is similar to the APOD example above except this time we define two new variables **img_url** and **img_type**. These will be used to complete the image source url.
+Begin by getting the pictures from the NASA server using the EPIC API. The process is similar to the APOD example above except this time we define two new variables **img_url** and **img_type** to be used to complete the **image source url**.
 
 ```markdown
 var req = new XMLHttpRequest();
@@ -285,9 +285,10 @@ Let's take a closer look at the request url.
 ```markdown
 var url = "https://api.nasa.gov/EPIC/api/natural/date/2016-07-05?api_key=";
 ```
-We use the **natual/date** paramter with the given date **2016-07-05**. In other words, we are requesting all the images and their metadata from July 5th, 2016.
 
- Then we receive and parse our request into JSON just like the we did with APOD API. 
+We use the **natural/date** paramter specifying the date **2016-07-05**. In other words, we are requesting all the images and their metadata from July 5th, 2016.
+
+Then we receive and parse our request into JSON just like we did with APOD API. 
 
 ```markdown
 req.addEventListener("load", function(){
@@ -295,16 +296,15 @@ req.addEventListener("load", function(){
   	var response = JSON.parse(req.responseText);
 ```
 
-From the **What gets received** section we see that we receive an array of JSON objects rather than just one. To access the images in each object we use bracket notation like so
+From the __What gets received__ section, we receive an **array of JSON objects**. To access the **image names** in each object we use bracket notation.
 
 ```markdown
     document.getElementById("img1").src = img_url + response[4].image + img_type;
     document.getElementById("img2").src = img_url + response[7].image + img_type;
     document.getElementById("img3").src = img_url + response[10].image + img_type;
-  }
-})
 ```
-We then implement the slideshow. 
+
+With the **three image source URLs** taken care of, we can implement the slideshow. 
 
 ```markdown
 var slideIndex = 0;
@@ -323,7 +323,7 @@ function showSlides() {
 }
 ```
 
-The function ` showSlides() ` cycles through the images in the __for-loop__ and hides them with the ` style.display ` property ` "none" `. 
+The function `showSlides()` cycles through the images in the _for-loop_ and hides them by setting the `style.display` property  to `"none"`.
 
 ```markdown
     for (i = 0; i < slides.length; i++) {
@@ -331,24 +331,24 @@ The function ` showSlides() ` cycles through the images in the __for-loop__ and 
     }
 ```
 
-Then the ` slideIndex ` is incremented and checked to see if it needs to reset back to the first image
+Then the `slideIndex` is incremented and checked to see if it needs to reset back to the first image
 
 ```markdown
   slideIndex++;
     if (slideIndex> slides.length) {slideIndex = 1} 
 ```
 
-The current image is rendered as a block element with the ` style.display ` property ` "block" ` 
+The current image is rendered as a block element by setting the `style.display` property to `"block"`. 
 
 ```markdown
   slides[slideIndex-1].style.display = "block"; 
 ```
 
-Finally, we call the ` showSlides() ` function recursively using the ` setTimeout() ` function which takes a timing parameter set to 2 seconds for each image in this case. The slideshow wil continueu indefinitely because there is no base case to halt the recursive call. 
+Finally, we call the `ShowSlides()` function recursively with the `setTimeout()` function which takes a timing parameter set to 2 seconds for each image in this case. The slideshow cycles indefinitely because there is no base case to halt the recursive call. 
 
 # Where To Find Additional Resources
 
-Here is a list of the primary links that were used in the making of this guide. They include additional information on the various topics covered.
+Here is a list of the primary links used in the making of this guide. They include additional information on the various topics covered.
 
 - **[NASA API Portal](https://api.nasa.gov/)**: Main page for the NASA API
 - **[EPIC Website](https://epic.gsfc.nasa.gov/)**: Official DSCOVR: EPIC website 
