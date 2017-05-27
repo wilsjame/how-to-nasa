@@ -342,7 +342,7 @@ Finally, we call the ` showSlides() ` function recursively using the ` setTimeou
 
 # Where To Find Additional Resources
 
-Here is list of addtional links that were used in the making of this guide. They include additional information on the various topics covered.
+Here is a list of the primary links that were used in the making of this guide. They include additional information on the various topics covered.
 
 - **[NASA API Portal](https://api.nasa.gov/)** Main page for the NASA API
 - **[EPIC Website](https://epic.gsfc.nasa.gov/)** Official DSCOVR: EPIC website 
