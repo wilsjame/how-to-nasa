@@ -225,7 +225,7 @@ https://api.nasa.gov/EPIC/api/enhanced/date/2015-10-31?api_key=DEMO_KEY
 ```
 
 ### What gets received
-The request returns information in JSON. The retrievable metadata includes the image name, date, caption, and positional data. Here is an exceprt of the beginning of the JSON object information returned from our last request:
+The request returns an array of JSON objects denoted the by the outer most` [ ] `. The retrievable metadata includes the image name, date, caption, and positional data. Here is an exceprt of the beginning of the JSON object information returned from our last request:
 
 ```markdown
 [{
@@ -261,7 +261,7 @@ On July 5th, 2016 the moon passed between DSCOVR and the Earth. EPIC snapped ima
 
 <iframe width="100%" height="700" src="//jsfiddle.net/wilsjame/pwanobnz/17/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-Let's cover what's going on here. We begin by getting the pictures from the NASA base using the EPIC API. The process is similar to the APOD example above. 
+Let's cover what's going on here. We begin by getting the pictures from the NASA base using the EPIC API. The process is similar to the APOD example above except this time we define two new variables **img_url** and **img_type**. These will be used to complete the image source url.
 
 ```markdown
 var req = new XMLHttpRequest();
@@ -274,98 +274,79 @@ req.open("GET", url + api_key);
 req.send();
 ```
 
-We define two new variables **img_url** and **img_type**. These will be used to complete the image source url. Then we receive and parse our request into JSON. 
+Let's take a closer look at the request url.
+
+```markdown
+var url = "https://api.nasa.gov/EPIC/api/natural/date/2016-07-05?api_key=";
+```
+We use the **natual/date** paramter with the given date **2016-07-05**. In other words, we are requesting all the images and their metadata from July 5th, 2016.
+
+ Then we receive and parse our request into JSON just like the we did with APOD API. 
 
 ```markdown
 req.addEventListener("load", function(){
 	if(req.status == 200 && req.readyState == 4){
   	var response = JSON.parse(req.responseText);
-    console.log(response[0].image);
+```
+
+From the **What gets received** section we see that we receive an array of JSON objects rather than just one. To access the images in each object we use bracket notation like so
+
+```markdown
     document.getElementById("img1").src = img_url + response[4].image + img_type;
     document.getElementById("img2").src = img_url + response[7].image + img_type;
     document.getElementById("img3").src = img_url + response[10].image + img_type;
   }
 })
 ```
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-```markdown
-https://api.nasa.gov/EPIC/api/natural/date/2016-07-05?api_key=5B6oJsSCQyekXZvNOKpsUhRPl1e7FHqjIAyHpybk
-```
-
-Lets cover what's going on here. We begin with the variable list:
+We then implement the slideshow. 
 
 ```markdown
-var req = new XMLHttpRequest();
-var url = "https://api.nasa.gov/planetary/apod?api_key=";
-var api_key = "DEMO_KEY";
-```
-We create a new **XMLHttpRequest** and assign in to req. An XMLHttpRequest provides client functionality for transferring data between a client and server. Think of it as a stream that connects or browser (client) the NASA databases (server). 
+var slideIndex = 0;
+showSlides();
 
-Then we create variables to hold the GET request url and API Key. Use your own API KEY by simply changing the **api_key** value. 
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1} 
+    slides[slideIndex-1].style.display = "block"; 
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+```
+
+The function ` showSlides() ` cycles through the images in the __for-loop__ and hides them with the ` style.display ` property ` "none" `. 
 
 ```markdown
-req.open("GET", url + api_key, true);
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
 ```
 
-The XMLHttpRequest **open** method initializes a request. Here are its parameters:
+Then the ` slideIndex ` is incremented and checked to see if it needs to reset back to the first image
 
 ```markdown
-req.open(method, url)
+  slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1} 
 ```
 
-We are using a **GET** method and have combined the **url** and **api_key** variables to create a valid url. AFter the request is initialized (opened) we send it to the server with,
+The current image is rendered as a block element with the ` style.display ` property ` "block" ` 
 
 ```markdown
-req.send();
+  slides[slideIndex-1].style.display = "block"; 
 ```
 
-the XMLHttpRequest **addEventListener** listens for an event type  and executes a function when the event fires (is fulfilled). 
+Finally, we call the ` showSLides() ` function recursively using the ` setTimeout() ` function which takes a timing parameter set to 2 seconds for each image in this case. There is no base case to the slideshow will never stop. 
 
-```markdown
-req.addEventListener("load", function(){
-	if(req.status == 200 && req.readyState == 4){
-  	var response = JSON.parse(req.responseText);
-    document.getElementById("title").textContent = response.title;
-    document.getElementById("date").textContent = response.date;
-    document.getElementById("pic").src = response.hdurl;
-    document.getElementById("explanation").textContent = response.explanation;
-  }
-})
-```
 
-The event type is **load** so when req (our XMLHttpRequest) is finished loading the function exececutes. Inside the function we check two things before we manipulate the data.
 
-```markdown
-req.status == 200
-```
 
-The **status** method returns a numerical status code of the response of the XMLHttpRequest. 200 denotes a succesful request.
 
-```markdown
-req.readyState == 4
-```
-The **readyState** method returns the state an XMLHttpRequest client is in. 4 denotes the operation is complete. 
 
-When both these properties are met it means the request was a sucess and we succesfully received the data from the server. The data recieved from the server is raw text in JSON format. We parse this with following code
 
-```markdown
-var response = JSON.parse(req.responseText);
-```
 
-Now we have neat variable **response** that holds all the data received in a neat JSON object. We access the **Document Object Model (DOM)** and change html elements with final lines of code:
-
-```markdown
-document.getElementById("title").textContent = response.title;
-    document.getElementById("date").textContent = response.date;
-    document.getElementById("pic").src = response.hdurl;
-    document.getElementById("explanation").textContent = response.explanation;
-```
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
