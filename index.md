@@ -348,6 +348,6 @@ Finally, we call the `ShowSlides()` function recursively with the `setTimeout()`
 
 Here is a list of the primary links used in the making of this guide. They include additional information on the various topics covered.
 
-- **[NASA API Portal](https://api.nasa.gov/)**: Main page for the NASA API
-- **[EPIC Website](https://epic.gsfc.nasa.gov/)**: Official DSCOVR: EPIC website 
+- **[NASA API Portal](https://api.nasa.gov/)**: Main page for the NASA APIs.
+- **[EPIC Website](https://epic.gsfc.nasa.gov/)**: Official DSCOVR: EPIC website. 
 - **[w3schools How To - Slideshow](https://www.w3schools.com/howto/howto_js_slideshow.asp)**: w3chools guide on how to create slideshow with CSS and JavaScript.  
