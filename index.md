@@ -85,6 +85,7 @@ https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=1995-06-16
 ```
 
 ### What gets received
+
 The request returns information in JavaScript Object Notation (JSON). JSON is a syntax used for storing and exchanging data between a client (browser) and a server (NASA database). Here is the JSON returned from our last request:
 
 ```markdown
@@ -184,16 +185,17 @@ document.getElementById("title").textContent = response.title;
 Official documentation can be found on the [EPIC API Documentation Page](https://epic.gsfc.nasa.gov/about/api), it is more in depth than the APOD documentation. 
 
 ### What it does
+
 The EPIC API gives access to the pictures taken by [EPIC (Earth Polychromatic Imaging Camera)](https://epic.gsfc.nasa.gov/epic) onboard NOAA's (National Oceanic and Atmospheric Administration) DSCOVR (Deep Space Climate Observatory). Along with imagery, the API provides image metadata in JSON format. 
 
 ### What gets sent to the server
 
-EPIC uses a GET HTTP request method to request data from the NASA server. GET methods request data from a specified source url. The following shows the HTTP method and the request url.
+EPIC uses a **GET HTTP request method** to request data from the NASA server. GET methods request data from a specified request url. The following shows the HTTP method and the request url.
 
 ```markdown
 GET https://epic.gsfc.nasa.gov/EPIC/api
 ```
-We use a path with slashes to append parameters to the URL. This is different from the APOD which uses query-string variables.
+Create a path with slashes `/` to append parameters to the URL. This is different from the APOD which uses the `paramter=value` query-string format.
 
 **Query Parameters**
 
@@ -209,22 +211,20 @@ We use a path with slashes to append parameters to the URL. This is different fr
 | enhanced/available | string | Dates for Enhanced Imagery | Alternate listing of all dates with available enhanced color imagery. |
 | api_key | string | DEMO_KEY | api.nasa.gov key for expanded usage |
 
-Here is an example URL requesting the most recent natural color image. It begins with the GET request url from above followed by a  `/` signifying the beginning of the path. When the path ends we append our personal api_key. Follow the link to make the request!
+Here is an example URL requesting the most recent natural color image. It begins with the GET request url from above followed by a `/` signifying the beginning of the path. When the path ends we append our personal **api_key**. Follow the link to make the request!
 
 ```markdown
 https://api.nasa.gov/EPIC/api/natural?api_key=DEMO_KEY
 ```
-
-Append additional parameters to the URL path with ` / ` and remember to end the URL with your API key
-
-Here is an example request for the enhanced image taken on October 31st, 2015:
+Here is an example request for the enhanced image taken on October 31st, 2015. Append additional parameters to the URL path with `/` and remember to end the URL with your API key.
 
 ```markdown
 https://api.nasa.gov/EPIC/api/enhanced/date/2015-10-31?api_key=DEMO_KEY 
 ```
 
 ### What gets received
-The request returns an array of JSON objects denoted the by the outer most` [ ] `. The retrievable metadata includes the image name, date, caption, and positional data. Here is an exceprt of the beginning of the JSON object information returned from our last request:
+
+The request returns an **array** of JSON objects enclosed in the outermost most brackets`[ ]`. Each JSON ojbect contains information for a single image. The retrievable metadata includes the image name, date, caption, and positional data. Here is an exceprt of the beginning of the JSON object information returned from our last request:
 
 ```markdown
 [{
@@ -236,19 +236,22 @@ The request returns an array of JSON objects denoted the by the outer most` [ ] 
 }]
 ```
 
-The actual response is much longer and includes numerous positional data sets such as lunar and sun positions in space. For our application we only need to access to the actual image file which is **not** returned. We need to use the image name returned to access the actual image source. Here is the syntax for creating the image source URL. Variables are denoted with a ` $ ` and are in all caps.
+The actual response is much longer and includes numerous positional data sets such as lunar and sun positions in space. For our application we want access to the image file which is **not** returned. Use the **image name** returned to access the actual image source. Here is the syntax for creating the image source URL. Variables are denoted with a `$` and are in all caps.
 
 ```markdown
 https://epic.gsfc.nasa.gov/archive/$COLLECTION/$YEAR/$MONTH/$DAY/$IMAGE_TYPE/$IMAGE_NAME.$IMAGE_TYPE
 ```
 
-` $COLLECTION ` is ` natural ` or ` enhanced `.
-` $YEAR/$MONTH/$DAY ` is the format YYYY/MM/DD.
-` $IMAGE_TYPE ` can be png, jpg, or thumbs.
-` $IMAGE_NAME `  is the image name returned in JSON object. 
+`$COLLECTION` can be `natural` or `enhanced`.
+
+`$YEAR/$MONTH/$DAY` is in the format YYYY/MM/DD.
+
+`$IMAGE_TYPE` can be `png`, `jpg`, or `thumbs`.
+
+`$IMAGE_NAME`  is the **image name** returned in JSON object. 
 
 
-Here's the complete URL for a full-sze original PNG image from our last request.
+Here is the complete URL for a full-sze original PNG image from our last request.
 
 ```markdown
 https://epic.gsfc.nasa.gov/archive/enhanced/2015/10/31/png/epic_RGB_20151031003633_01.png
@@ -258,7 +261,11 @@ https://epic.gsfc.nasa.gov/archive/enhanced/2015/10/31/png/epic_RGB_201510310036
 
 On July 5th, 2016 the moon passed between DSCOVR and the Earth. EPIC snapped images over a period of about 4 hours. The entire set consists of 15 pictures where one can see the far side of the moon, which is never seen from Earth. The following example uses the EPIC API to access 3 of these pictures to create an automatic slideshow showing the lunar Transit!
 
-<iframe width="100%" height="900" src="//jsfiddle.net/wilsjame/pwanobnz/17/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+### JSFidldle
+
+<iframe width="100%" height="900" src="//jsfiddle.net/wilsjame/pwanobnz/17/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe><br>
+
+### How it works
 
 Let's cover what's going on here. We begin by getting the pictures from the NASA base using the EPIC API. The process is similar to the APOD example above except this time we define two new variables **img_url** and **img_type**. These will be used to complete the image source url.
 
