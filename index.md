@@ -41,6 +41,8 @@ The following will be covered for each API:
 
 Lets get started!
 
+<br>
+
 # Astronomy Picture Of The Day
 
 The APOD is a good API to start with because it's easy to work with. 
@@ -116,27 +118,22 @@ var req = new XMLHttpRequest();
 var url = "https://api.nasa.gov/planetary/apod?api_key=";
 var api_key = "DEMO_KEY";
 ```
-We create a new **XMLHttpRequest** and assign in to the variable **req**. An XMLHttpRequest provides client functionality for transferring data between a client and server. Think of it as a stream that connects or browser (client) the NASA databases (server). 
-
-Then we create variables to hold the GET request url and API Key. Use your own API KEY by simply changing the **api_key** value. 
-
-```markdown
-req.open("GET", url + api_key, true);
-```
+We define a new **XMLHttpRequest** and assign in to the variable **req**. An XMLHttpRequest provides client functionality for transferring data between a client and server. Think of it as a stream that connects our browser (client) the NASA databases (server). For ease of use, we define variables, **url** and **api_key** to hold the GET request url and API Key. Use your own API KEY by simply changing the **api_key** value. 
 
 The XMLHttpRequest **open** method initializes a request. Here are its parameters:
 
 ```markdown
 req.open(method, url)
 ```
+We are using a **GET** method and have combined the **url** and **api_key** variables to create a valid url. After the request is initialized (opened) we send it to the server.
 
-We are using a **GET** method and have combined the **url** and **api_key** variables to create a valid url. AFter the request is initialized (opened) we send it to the server with,
 
 ```markdown
+req.open("GET", url + api_key, true);
 req.send();
 ```
 
-the XMLHttpRequest **addEventListener** listens for an event type  and executes a function when the event fires (is fulfilled). 
+the XMLHttpRequest **addEventListener** method listens for an event type and executes a function when the event fires (is fulfilled). 
 
 ```markdown
 req.addEventListener("load", function(){
@@ -150,26 +147,26 @@ req.addEventListener("load", function(){
 })
 ```
 
-The event type is **load** so when req (our XMLHttpRequest) is finished loading the function exececutes. Inside the function we check two things before we manipulate the data.
-
-```markdown
-req.status == 200
-```
+The event type is **load** so when req (our XMLHttpRequest) is finished loading the function exececutes. Inside the function we check two things before manipulating the received data.
 
 The **status** method returns a numerical status code of the response of the XMLHttpRequest. 200 denotes a succesful request.
 
 ```markdown
-req.readyState == 4
+req.status == 200
 ```
 The **readyState** method returns the state an XMLHttpRequest client is in. 4 denotes the operation is complete. 
 
-When both these properties are met it means the request was a sucess and we succesfully received the data from the server. The data recieved from the server is raw text in JSON format. We parse this with following code
+```markdown
+req.readyState == 4
+```
+
+When both these properties are true it means the request was a success and we succesfully received the data from the server. The data recieved from the server is raw text in JSON format. We parse it into the variable **response** with the following code. 
 
 ```markdown
 var response = JSON.parse(req.responseText);
 ```
 
-Now we have neat variable **response** that holds all the data received in a neat JSON object. We access the **Document Object Model (DOM)** and change html elements with final lines of code:
+Now we have neat variable that holds all the data received in JSON format. We access the **Document Object Model (DOM)** and change HTML elements with final lines of code:
 
 ```markdown
 document.getElementById("title").textContent = response.title;
@@ -177,6 +174,8 @@ document.getElementById("title").textContent = response.title;
     document.getElementById("pic").src = response.hdurl;
     document.getElementById("explanation").textContent = response.explanation;
 ```
+
+<br>
 
 # Earth Polychromatic Imaging Camera (EPIC)
 
