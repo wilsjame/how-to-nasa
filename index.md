@@ -261,10 +261,111 @@ On July 5th, 2016 the moon passed between DSCOVR and the Earth. EPIC snapped ima
 
 <iframe width="100%" height="700" src="//jsfiddle.net/wilsjame/pwanobnz/17/embedded/result,js,html/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
+Let's cover what's going on here. We begin by getting the pictures from the NASA base using the EPIC API. The process is similar to the APOD example above. 
+
+```markdown
+var req = new XMLHttpRequest();
+var url = "https://api.nasa.gov/EPIC/api/natural/date/2016-07-05?api_key=";
+var api_key = "5B6oJsSCQyekXZvNOKpsUhRPl1e7FHqjIAyHpybk";
+var img_url =  "https://epic.gsfc.nasa.gov/archive/natural/2016/07/05/png/";
+var img_type = ".png";
+
+req.open("GET", url + api_key);
+req.send();
+```
+
+We define two new variables **img_url** and **img_type**. These will be used to complete the image source url. Then we receive and parse our request into JSON. 
+
+```markdown
+req.addEventListener("load", function(){
+	if(req.status == 200 && req.readyState == 4){
+  	var response = JSON.parse(req.responseText);
+    console.log(response[0].image);
+    document.getElementById("img1").src = img_url + response[4].image + img_type;
+    document.getElementById("img2").src = img_url + response[7].image + img_type;
+    document.getElementById("img3").src = img_url + response[10].image + img_type;
+  }
+})
+```
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ```markdown
 https://api.nasa.gov/EPIC/api/natural/date/2016-07-05?api_key=5B6oJsSCQyekXZvNOKpsUhRPl1e7FHqjIAyHpybk
 ```
 
+Lets cover what's going on here. We begin with the variable list:
+
+```markdown
+var req = new XMLHttpRequest();
+var url = "https://api.nasa.gov/planetary/apod?api_key=";
+var api_key = "DEMO_KEY";
+```
+We create a new **XMLHttpRequest** and assign in to req. An XMLHttpRequest provides client functionality for transferring data between a client and server. Think of it as a stream that connects or browser (client) the NASA databases (server). 
+
+Then we create variables to hold the GET request url and API Key. Use your own API KEY by simply changing the **api_key** value. 
+
+```markdown
+req.open("GET", url + api_key, true);
+```
+
+The XMLHttpRequest **open** method initializes a request. Here are its parameters:
+
+```markdown
+req.open(method, url)
+```
+
+We are using a **GET** method and have combined the **url** and **api_key** variables to create a valid url. AFter the request is initialized (opened) we send it to the server with,
+
+```markdown
+req.send();
+```
+
+the XMLHttpRequest **addEventListener** listens for an event type  and executes a function when the event fires (is fulfilled). 
+
+```markdown
+req.addEventListener("load", function(){
+	if(req.status == 200 && req.readyState == 4){
+  	var response = JSON.parse(req.responseText);
+    document.getElementById("title").textContent = response.title;
+    document.getElementById("date").textContent = response.date;
+    document.getElementById("pic").src = response.hdurl;
+    document.getElementById("explanation").textContent = response.explanation;
+  }
+})
+```
+
+The event type is **load** so when req (our XMLHttpRequest) is finished loading the function exececutes. Inside the function we check two things before we manipulate the data.
+
+```markdown
+req.status == 200
+```
+
+The **status** method returns a numerical status code of the response of the XMLHttpRequest. 200 denotes a succesful request.
+
+```markdown
+req.readyState == 4
+```
+The **readyState** method returns the state an XMLHttpRequest client is in. 4 denotes the operation is complete. 
+
+When both these properties are met it means the request was a sucess and we succesfully received the data from the server. The data recieved from the server is raw text in JSON format. We parse this with following code
+
+```markdown
+var response = JSON.parse(req.responseText);
+```
+
+Now we have neat variable **response** that holds all the data received in a neat JSON object. We access the **Document Object Model (DOM)** and change html elements with final lines of code:
+
+```markdown
+document.getElementById("title").textContent = response.title;
+    document.getElementById("date").textContent = response.date;
+    document.getElementById("pic").src = response.hdurl;
+    document.getElementById("explanation").textContent = response.explanation;
+```
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
