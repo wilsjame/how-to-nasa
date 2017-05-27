@@ -29,17 +29,15 @@ We will be working with these two APIs:
 1. [Astronomy Picture Of The Day](https://api.nasa.gov/api.html#apod)
 2. [Earth Observatory Natural Event Tracker (EONET)](https://api.nasa.gov/api.html#EONET)
 
-For each API the following will be covered:
+The following will be covered for each API:
 
-- **Documenation of the API call**
+- **Documenation Of The API Call**
   * What it does
   * What gets sent to the server
   * What gets received
-- **Example call** 
-  * **Runnable code**
-    * Making a request
-    * What _they_ (NASA) send back to us
-    * Creating an applicatin with what we receive 
+- **Example Call** 
+  * JSFIddle
+  * How it works
 
 Lets get started!
 
@@ -47,7 +45,7 @@ Lets get started!
 
 The APOD is a good API to start with because it's easy to work with. 
 
-## Documenation of the API call
+## Documenation Of The API Call
 
 Documentation can be found [here](https://api.nasa.gov/api.html#apod), it is brief but this is understandable for such a simple call. 
 
